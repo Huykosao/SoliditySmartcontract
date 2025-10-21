@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/qlds/CandidateManager.sol": "Candidate"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/qlds/CandidateManager.sol": {
+			"keccak256": "0xd61a045fb811f73eaff04d448d04795b41e2631b2f86b8a1cce869183481c275",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26d5ce354d4ab9cde4f3d38c695bbdad9325028c229fc25690faf35df562abd9",
+				"dweb:/ipfs/QmTk6Jz3DFwWssx2HX7WeXvU8wpm8hdwmjUfG37xm968AV"
+			]
+		}
+	},
+	"version": 1
+}
