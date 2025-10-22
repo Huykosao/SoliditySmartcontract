@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-//Quản lý danh sách ứng cử viên và người dùng tham gia bỏ phiếu, mỗi người chỉ được bầu 1 lần.
 contract CandidateManager{
     struct Candidate {
         string name;
@@ -13,7 +12,6 @@ contract CandidateManager{
     string public nameTop;
     function addCandidate(string memory _name) public {
         require(!isCandidateExit(_name), "Candidate already exists");
-        
         candidates[_name] = Candidate(_name,0);
     }
     function isCandidateExit(string memory _name) public view returns(bool) {
@@ -27,11 +25,16 @@ contract CandidateManager{
         addValue(_name);
         totalVotes++;
     }
+    function unVote(string memory _name) public {
+        require(candidates[_name].voteCount > 0, "No votes to remove");
+        candidates[_name].voteCount--;
+        addValue(_name);
+        totalVotes--;
+    }
     function getTotalVotes() public view returns(uint8){
         return totalVotes;
     }
-    // lay maxValue so sanh voi voteCount neu be hon thi maxValue =  voteCount
-    //Trả về danh sách ứng viên có nhiều phiếu nhất.
+    
     function addValue(string memory _name) public {
         if(maxValue < candidates[_name].voteCount){
             maxValue = candidates[_name].voteCount;

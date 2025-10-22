@@ -3,9 +3,8 @@ pragma solidity ^0.8.0;
 
 interface ICandidateManager {
     function isCandidateExit(string memory _name) external view returns (bool);
-    function getCandidateInfor(string memory _name) external view returns (string memory, uint, uint, bool);
-    function getCandidateVoteCount(string memory _name) external view returns (uint);
     function vote(string memory _name) external;
+    function unVote(string memory _name) external;
 
 }
 contract UserManager{
@@ -27,9 +26,9 @@ contract UserManager{
     function addUser(uint _id, string memory _name, string memory _nameCandidate) public {
         require(users[_id].userAddress == address(0), "User id already exists");
         require(candidateContract.isCandidateExit(_nameCandidate), "Candidate does not exist");
-        users[_id] = User(_id, _name, _nameCandidate, msg.sender, true);
-        //Bỏ phiếu cho ứng viên
-        candidateContract.vote(_nameCandidate);
+        users[_id] = User(_id, _name, _nameCandidate, msg.sender, false);
+
+        voteCadidate(_id,_nameCandidate);
         userCount++;
     }
     function getUserCount() public view returns (uint8) {
@@ -38,9 +37,21 @@ contract UserManager{
     function getUserById(uint _id) public view returns (User memory) {
         return users[_id];
     }
-    //Kiểm tra user đã chọn ai.
-    function getUserVote(uint _id) public view returns(string memory) {
+    function voteCadidate(uint _id,string memory _nameCandidate) public {
+        require(users[_id].isVote == false, "User has voted");
+        users[_id].isVote = true;
+        users[_id].nameCandidate = _nameCandidate;
+        candidateContract.vote(_nameCandidate);
+    }
+    function unVoteCadidate(uint _id,string memory _nameCandidate) public {
         require(users[_id].isVote == true, "User has not voted yet");
+        delete users[_id].nameCandidate;
+        users[_id].isVote = false;
+        candidateContract.unVote(_nameCandidate);
+    }
+    
+    function getUserVote(uint _id) public view returns(string memory) {
+        require(bytes(users[_id].nameCandidate).length != 0, "User has not voted yet");
         return users[_id].nameCandidate;
     }
 

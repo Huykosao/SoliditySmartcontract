@@ -176,6 +176,19 @@
 						"type": "string"
 					}
 				],
+				"name": "unVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
 				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -210,11 +223,11 @@
 	},
 	"sources": {
 		"contracts/qlds/CandidateManager.sol": {
-			"keccak256": "0xa519ffaafe21290d7d60daad3eccf38f338c913af5d2ed5229b5604f2c26bc57",
+			"keccak256": "0xa346cd355bf1372b5a58f81d601fed0ccf9c33d423cbfc35e232eea9a18bba4f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://edcbc148c01270e50fb1b0cae0bc3d067862bef86d4da9875d1c990f9b9fbda6",
-				"dweb:/ipfs/QmTBieKnQ38p856iyMf2UzbgoEsFjejceumoymgsiA5RUR"
+				"bzz-raw://fd0112406be66a57db738da39435cc5ce26b9f409ee4685e27add0d9dd312c16",
+				"dweb:/ipfs/QmbhVi9AKL91jvF25gn9QdGkgaWKKUM7DS2YYQg9iNyX81"
 			]
 		}
 	},

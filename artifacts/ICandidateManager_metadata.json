@@ -13,59 +13,6 @@
 						"type": "string"
 					}
 				],
-				"name": "getCandidateInfor",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					}
-				],
-				"name": "getCandidateVoteCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					}
-				],
 				"name": "isCandidateExit",
 				"outputs": [
 					{
@@ -75,6 +22,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "unVote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -119,11 +79,11 @@
 	},
 	"sources": {
 		"contracts/qlds/ICandidateManager.sol": {
-			"keccak256": "0xa59b0c36d1771b231fb94ed42d66c7ff401941faea67275ebf4f343cb0ebfaaf",
+			"keccak256": "0xba7ce7182892a47665793f3babe2c8b598524a20864b4c3ba5b3a5fd4f6f666b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c9fbe08341038a5bd978189a93e4b71a1c5e82d55fe735228437b143b8d4510e",
-				"dweb:/ipfs/QmVuN7MbDayqtax6eC3cyH2nu8WN3oKkWBi3nZL6f1BgVB"
+				"bzz-raw://a9f171cea6680d74ff66338884dc55395e66df5f63e5a0a5ec257571508ed838",
+				"dweb:/ipfs/QmPnTKfzAMw8KpPxJ7zA1tidMczazznGzE1TJjm9VqN3Zm"
 			]
 		}
 	},
