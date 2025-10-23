@@ -26,8 +26,9 @@ contract UserManager{
     function addUser(uint _id, string memory _name, string memory _nameCandidate) public {
         require(users[_id].userAddress == address(0), "User id already exists");
         require(candidateContract.isCandidateExit(_nameCandidate), "Candidate does not exist");
-        users[_id] = User(_id, _name, _nameCandidate, msg.sender, false);
-        voteCandidate(_id,_nameCandidate);
+        users[_id] = User(_id, _name, _nameCandidate, msg.sender, true);
+        // voteCandidate(_id,_nameCandidate);
+        candidateContract.vote(_nameCandidate);
         userCount++;
     }
     function getUserCount() public view returns (uint) {
@@ -36,12 +37,12 @@ contract UserManager{
     function getUserById(uint _id) public view returns (User memory) {
         return users[_id];
     }
-    function voteCandidate(uint _id,string memory _nameCandidate) public {
-        require(users[_id].isVote == false, "User has voted");
-        users[_id].isVote = true;
-        users[_id].nameCandidate = _nameCandidate;
-        candidateContract.vote(_nameCandidate);
-    }
+    // function voteCandidate(uint _id,string memory _nameCandidate) public {
+    //     require(users[_id].isVote == false, "User has voted");
+    //     users[_id].isVote = true;
+    //     users[_id].nameCandidate = _nameCandidate;
+    //     candidateContract.vote(_nameCandidate);
+    // }
     
     function getUserVote(uint _id) public view returns(string memory) {
         require(bytes(users[_id].nameCandidate).length != 0, "User has not voted yet");

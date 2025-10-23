@@ -181,24 +181,6 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_nameCandidate",
-						"type": "string"
-					}
-				],
-				"name": "voteCandidate",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -229,11 +211,11 @@
 	},
 	"sources": {
 		"contracts/qlds/ICandidateManager.sol": {
-			"keccak256": "0x57dc4b4cdb93dd24b92deeefdbf9da8551265bd22cfcf34dbdc38b9d70d7ac73",
+			"keccak256": "0xe25f8ba506124af289263e7a77c9ea0fb6d9424614803dfa729128f5805bfc62",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9f447b389d6bcc9cfedf1cea3ce6399022eff0beb982e9274677bd904f824c71",
-				"dweb:/ipfs/QmVvkRwr4JFY168ypXr3bAhEqDDYQMmVw9aAeMAD3nFQyP"
+				"bzz-raw://373e7a87bb13c94a0b9179d029939aca90406a9c422d09ffd5e9aa9dafbff694",
+				"dweb:/ipfs/QmUE4Yd14LzfF7CJtYBDFRsiF46pT8uhnAqWRZNY5qme6t"
 			]
 		}
 	},
