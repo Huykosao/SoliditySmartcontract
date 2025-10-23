@@ -18,33 +18,22 @@ contract CandidateManager{
         return bytes(candidates[_name].name).length != 0;
     }
     function getCandidateInfo(string memory _name) public view returns(string memory,uint) {
+        require(isCandidateExit(_name), "Candidate does not exist");
         return (candidates[_name].name,candidates[_name].voteCount);
     }
     function vote(string memory _name) public {
+        require(isCandidateExit(_name), "Candidate does not exist");
         candidates[_name].voteCount++;
-        addValue(_name);
         totalVotes++;
-    }
-    function unVote(string memory _name) public {
-        require(candidates[_name].voteCount > 0, "No votes to remove");
-        candidates[_name].voteCount--;
-        addValue(_name);
-        totalVotes--;
+        if (candidates[_name].voteCount > maxValue) {
+            maxValue = candidates[_name].voteCount;
+            nameTop = _name;
+        }
     }
     function getTotalVotes() public view returns(uint8){
         return totalVotes;
     }
-    // ham nay sai roi
-    function addValue(string memory _name) public {
-        if(maxValue < candidates[_name].voteCount){
-            maxValue = candidates[_name].voteCount;
-            nameTop = _name;
-        }else if(candidates[_name].voteCount == 0){
-            maxValue = 0;
-            nameTop = "";
-        }
 
-    }
     function getMaxValue() public view returns(string memory,uint){
         require(bytes(nameTop).length != 0, "No votes yet");
         return (nameTop,maxValue);
