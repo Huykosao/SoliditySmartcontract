@@ -34,11 +34,14 @@ contract CandidateManager{
     function getTotalVotes() public view returns(uint8){
         return totalVotes;
     }
-    
+    // ham nay sai roi
     function addValue(string memory _name) public {
         if(maxValue < candidates[_name].voteCount){
             maxValue = candidates[_name].voteCount;
             nameTop = _name;
+        }else if(candidates[_name].voteCount == 0){
+            maxValue = 0;
+            nameTop = "";
         }
 
     }
