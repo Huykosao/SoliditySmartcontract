@@ -24,10 +24,11 @@ contract UserManager{
 
     function addVoter(uint _id, string memory _name, string memory _nameCandidate) public {
         require(users[_id].userAddress == address(0), "User id already exists");
+        require(bytes(_name).length != 0, "Name cannot be empty");
         require(candidateContract.isCandidateExist(_nameCandidate), "Candidate does not exist");
         users[_id] = User(_id, _name, _nameCandidate, msg.sender, true);
-        candidateContract.vote(_nameCandidate);
         userCount++;
+        candidateContract.vote(_nameCandidate);
     }
 
     function getUserCount() public view returns (uint) {
