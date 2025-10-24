@@ -211,11 +211,11 @@
 	},
 	"sources": {
 		"contracts/qlds/ICandidateManager.sol": {
-			"keccak256": "0xe25f8ba506124af289263e7a77c9ea0fb6d9424614803dfa729128f5805bfc62",
+			"keccak256": "0xc58e2054f03105a3ab842f09972f6cec8a6027cc09284da619146077c026613b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://373e7a87bb13c94a0b9179d029939aca90406a9c422d09ffd5e9aa9dafbff694",
-				"dweb:/ipfs/QmUE4Yd14LzfF7CJtYBDFRsiF46pT8uhnAqWRZNY5qme6t"
+				"bzz-raw://dcac261fc754197a80e15da0bc1354035499a876d90b6c5ef85e15da83cbe0c8",
+				"dweb:/ipfs/QmafNV9F5FP59ArW2yoBJcwy4XNqXXiq5DrHhK9MEgTfbL"
 			]
 		}
 	},
