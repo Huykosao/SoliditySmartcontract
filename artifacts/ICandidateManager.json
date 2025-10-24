@@ -50,7 +50,6 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"isCandidateExist(string)": "7e797dee",
-			"unVote(string)": "8cbef3f1",
 			"vote(string)": "fc36e15b"
 		}
 	},
@@ -72,19 +71,6 @@
 				}
 			],
 			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "string",
-					"name": "_name",
-					"type": "string"
-				}
-			],
-			"name": "unVote",
-			"outputs": [],
-			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{

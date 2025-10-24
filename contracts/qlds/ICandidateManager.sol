@@ -4,8 +4,6 @@ pragma solidity ^0.8.0;
 interface ICandidateManager {
     function isCandidateExist(string memory _name) external view returns (bool);
     function vote(string memory _name) external;
-    function unVote(string memory _name) external;
-
 }
 contract UserManager{
     struct User{

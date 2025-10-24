@@ -9,7 +9,7 @@ contract CandidateManager {
 
     mapping(string => Candidate) public candidates;
     uint public totalVotes = 0;
-    uint public maxValue;
+    uint public highestVote;
     string public nameTop;
 
     function addCandidate(string memory _name) public {
@@ -33,8 +33,8 @@ contract CandidateManager {
         candidates[_name].voteCount++;
         totalVotes++;
 
-        if (candidates[_name].voteCount > maxValue) {
-            maxValue = candidates[_name].voteCount;
+        if (candidates[_name].voteCount > highestVote) {
+            highestVote = candidates[_name].voteCount;
             nameTop = _name;
         }
     }
@@ -43,8 +43,8 @@ contract CandidateManager {
         return totalVotes;
     }
 
-    function getMaxValue() public view returns (string memory, uint) {
+    function getHighestVote() public view returns (string memory, uint) {
         require(bytes(nameTop).length != 0, "No votes yet");
-        return (nameTop, maxValue);
+        return (nameTop, highestVote);
     }
 }
