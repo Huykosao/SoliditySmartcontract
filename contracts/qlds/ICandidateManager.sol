@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 interface ICandidateManager {
-    function isCandidateExit(string memory _name) external view returns (bool);
+    function isCandidateExist(string memory _name) external view returns (bool);
     function vote(string memory _name) external;
     function unVote(string memory _name) external;
 
@@ -24,9 +24,9 @@ contract UserManager{
         candidateContract = ICandidateManager(_candidateContractAddress);
     }
 
-    function addUser(uint _id, string memory _name, string memory _nameCandidate) public {
+    function addVoter(uint _id, string memory _name, string memory _nameCandidate) public {
         require(users[_id].userAddress == address(0), "User id already exists");
-        require(candidateContract.isCandidateExit(_nameCandidate), "Candidate does not exist");
+        require(candidateContract.isCandidateExist(_nameCandidate), "Candidate does not exist");
         users[_id] = User(_id, _name, _nameCandidate, msg.sender, true);
         candidateContract.vote(_nameCandidate);
         userCount++;
@@ -44,5 +44,6 @@ contract UserManager{
         require(bytes(users[_id].nameCandidate).length != 0, "User has not voted yet");
         return users[_id].nameCandidate;
     }
+    
 
 }

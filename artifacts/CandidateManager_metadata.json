@@ -89,9 +89,9 @@
 				"name": "getTotalVotes",
 				"outputs": [
 					{
-						"internalType": "uint8",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint8"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -105,7 +105,7 @@
 						"type": "string"
 					}
 				],
-				"name": "isCandidateExit",
+				"name": "isCandidateExist",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -147,9 +147,9 @@
 				"name": "totalVotes",
 				"outputs": [
 					{
-						"internalType": "uint8",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint8"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -197,11 +197,11 @@
 	},
 	"sources": {
 		"contracts/qlds/CandidateManager.sol": {
-			"keccak256": "0x8e6d344b3637f1143fc66aa19295fd7fe35cff51783a7d7c6fafd2ca189dde7e",
+			"keccak256": "0x84fa54ccbcb9c4d3210518ffcf9a6488ba953f43b4c859014e6da409b3890be1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://69c08c3901e97dad97e730dcffee6e0af8b342f5070756aca1bf7bd056598722",
-				"dweb:/ipfs/QmYukWNDvkNJkjzsJQ3Crjq1YqQxb8Me73mVdvuVmAhZDD"
+				"bzz-raw://3a26e4894a4e12b9cef96178fddbd361b206a006aaf4d9489618f41dedd626a5",
+				"dweb:/ipfs/QmNX1QBV4Jj5jEAj5uEXkJ3BVL4RWo9iTMTc7s3A1ZfVWE"
 			]
 		}
 	},

@@ -13,7 +13,7 @@
 						"type": "string"
 					}
 				],
-				"name": "isCandidateExit",
+				"name": "isCandidateExist",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -79,11 +79,11 @@
 	},
 	"sources": {
 		"contracts/qlds/ICandidateManager.sol": {
-			"keccak256": "0xc58e2054f03105a3ab842f09972f6cec8a6027cc09284da619146077c026613b",
+			"keccak256": "0x5619dd0785ad94ee57cfe4720bb43e7c21fb2331f01e4448f58e47f921d69b87",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dcac261fc754197a80e15da0bc1354035499a876d90b6c5ef85e15da83cbe0c8",
-				"dweb:/ipfs/QmafNV9F5FP59ArW2yoBJcwy4XNqXXiq5DrHhK9MEgTfbL"
+				"bzz-raw://b605e37ad99f5d625d547fe3e3502971af43ab00e34d402ab674252f4a1de6c3",
+				"dweb:/ipfs/QmaSorZyfsVhziHwadjRcZGk4yMKL2FZGp5RgoRpEhcdHF"
 			]
 		}
 	},

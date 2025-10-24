@@ -49,7 +49,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"isCandidateExit(string)": "85453ea7",
+			"isCandidateExist(string)": "7e797dee",
 			"unVote(string)": "8cbef3f1",
 			"vote(string)": "fc36e15b"
 		}
@@ -63,7 +63,7 @@
 					"type": "string"
 				}
 			],
-			"name": "isCandidateExit",
+			"name": "isCandidateExist",
 			"outputs": [
 				{
 					"internalType": "bool",

@@ -8,28 +8,28 @@ contract CandidateManager {
     }
 
     mapping(string => Candidate) public candidates;
-    uint8 public totalVotes = 0;
+    uint public totalVotes = 0;
     uint public maxValue;
     string public nameTop;
 
     function addCandidate(string memory _name) public {
-        require(!isCandidateExit(_name), "Candidate already exists");
+        require(!isCandidateExist(_name), "Candidate already exists");
         candidates[_name] = Candidate(_name, 0);
     }
 
-    function isCandidateExit(string memory _name) public view returns (bool) {
+    function isCandidateExist(string memory _name) public view returns (bool) {
         return bytes(candidates[_name].name).length != 0;
     }
 
     function getCandidateInfo(
         string memory _name
     ) public view returns (string memory, uint) {
-        require(isCandidateExit(_name), "Candidate does not exist");
+        require(isCandidateExist(_name), "Candidate does not exist");
         return (candidates[_name].name, candidates[_name].voteCount);
     }
 
     function vote(string memory _name) public {
-        require(isCandidateExit(_name), "Candidate does not exist");
+        require(isCandidateExist(_name), "Candidate does not exist");
         candidates[_name].voteCount++;
         totalVotes++;
 
@@ -39,7 +39,7 @@ contract CandidateManager {
         }
     }
 
-    function getTotalVotes() public view returns (uint8) {
+    function getTotalVotes() public view returns (uint) {
         return totalVotes;
     }
 
